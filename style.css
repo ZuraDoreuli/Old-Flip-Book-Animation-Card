@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+*,
+*::before,
+*::after {
+  margin: 0;
+	padding: 0;
+  box-sizing: border-box;
+}
+body {
+	height: 100vh;
+	background: url("./room.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.book-content {
+	position: absolute;
+	top: 52%;
+	left: 35%;
+	width: 330px;
+	height: 467px;
+	background: #C8AA94;
+  box-shadow: inset 600px 0 50px #000000cc, 0 20px 100px #000000e6;
+  transform-style: preserve-3d;
+	transform: translate(-50%,-50%) perspective(2000px);
+	transition: 2s cubic-bezier(0, 0, .3, .88);
+}
+.book-content:hover {
+	transform: translate(-50%,-50%) perspective(2000px);
+	box-shadow: inset 20px 0 50px #000000cc, 0 10px 100px #000000e6;
+}
+.book-content:before {
+	content: '';
+	position: absolute;
+  width: 101%;
+	height: 7px;
+	top: -6px;
+	left: 0;
+	background: #3B2E26;
+	transform-origin: bottom;
+	transform: skewX(-45deg);
+  border-top-right-radius: 5px;
+}
+.book-content:after {
+	content: '';
+	position: absolute;
+  width: 7px;
+	height: 100.5%;
+	top: 0;
+	right: -7px;
+	background: #3B2E26;
+	transform-origin: left;
+	transform: skewY(-45deg);
+}
+.book-cover {
+  position: relative;
+	width: 100%;
+	height: 100%;
+	transform-origin: left;
+	transition: 2s cubic-bezier(0, 0, .3, .88);
+  background: url(./book-cover.jpg);
+  background-size: cover;
+  z-index: 1;
+}
+.book-content:hover .book-cover {
+	transform: rotateY(-135deg);
+}
+.book-page {
+	position: absolute;
+  width: 100%;
+  height: 100%;
+	top: 0;
+	left: 0;
+  padding: 20px;
+  border-left: 7px solid #3B2E26;
+  border-bottom: 5px solid #3B2E26;
+  font-family: 'MedievalSharp', cursive;
+}
+.book-page h1 {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #020202;
+
+}
+.book-page p {
+  font-size: 16px;
+  line-height: 1.3;
+}
